@@ -5,6 +5,13 @@ def euclidean_dis(M, node1, node2):
     point2 = M.intersections[node2]
     return math.sqrt(pow(point1[0] - point2[0],2) + pow(point2[1] - point2[1],2))
 
+#For this implementation euclidean distance was used as the heuristic function but another metric the manhattan distance can also be used as the heuristic funcion. Defined below.
+def manhattan_dis(M, node1, node2):
+    point1 = M.intersections[node1]
+    point2 = M.intersections[node2]
+    return (abs(point1[0] - point2[0]) + abs(point2[1] - point2[1]))
+
+
 def shortest_path(M,start,goal):
     if start == goal:
         return [start]
