@@ -1,5 +1,7 @@
 import math
 import heapq
+
+#For this implementation euclidean distance was used as the heuristic function but another metric the manhattan distance can also be used as the heuristic funcion. Defined below.
 def euclidean_dis(M, node1, node2):
     point1 = M.intersections[node1]
     point2 = M.intersections[node2]
@@ -29,6 +31,7 @@ def shortest_path(M,start,goal):
         else:
             children = M.roads[node[1]]
             for child in children:
+            #For this implementation euclidean distance was used as the heuristic function but another metric the manhattan distance can also be used as the heuristic funcion. Defined below.
                 distance = euclidean_dis(M, child, node[1])
                 heuristic = euclidean_dis(M, child, goal)
                 if child in visited and visited[child]['f'] > distance+node[0]+heuristic:
